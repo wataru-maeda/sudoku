@@ -72,12 +72,13 @@ extension MainViewController {
         sudokuView.clickedInputDigit(digit: digit)
     }
     
-    @IBAction func clickHint(_ sender: UIButton) {
+    @IBAction func clickCheat(_ sender: UIButton) {
         sender.bounce()
     }
     
     @IBAction func clickErase(_ sender: UIButton) {
         sender.bounce()
+        sudokuView.clickErase(index: sender.tag)
     }
     
     @IBAction func clickUndo(_ sender: UIButton) {

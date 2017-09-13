@@ -114,6 +114,15 @@ extension SudokuView {
             SudokuService.shared.setQ(val: digit, c: idx.0, r: idx.1)
         }
     }
+    
+    func clickErase(index: Int) {
+        if let selectedBox = getSelectedBox() {
+            let idx = SudokuService.convertTo2DIdx(idx: selectedBox.tag)  // convert to (c,r)
+            SudokuService.shared.setQ(val: 0, c: idx.0, r: idx.1)
+            selectedBox.setTitle("", for: .normal)
+            selectedBox.bounce()
+        }
+    }
 }
 
 
