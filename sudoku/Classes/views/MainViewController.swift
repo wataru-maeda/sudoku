@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var menuView: UIView!
     @IBOutlet var inputDigitView: UIView!
-    @IBOutlet var sudokuView: UIView! {
+    @IBOutlet var sudokuView: SudokuView! {
         didSet {
             sudokuView.layer.cornerRadius = 5
             sudokuView.clipsToBounds = true
@@ -68,6 +68,8 @@ extension MainViewController {
     
     func clickDigit(_ sender: UIButton) {
         sender.bounce()
+        guard let digit = Int(sender.titleLabel?.text ?? "") else { return }
+        sudokuView.clickedInputDigit(digit: digit)
     }
     
     @IBAction func clickHint(_ sender: UIButton) {

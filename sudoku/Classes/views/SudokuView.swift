@@ -95,8 +95,51 @@ extension SudokuView {
 
 extension SudokuView {
     func selectBox(_ box: UIButton) {
-        print(box.tag)
+        deselectBox()
         box.toggle()
         box.bounce()
+    }
+    
+    func clickedInputDigit(digit: Int) {
+        if let selectedBox = getSelectedBox() {
+            selectedBox.setTitle("\(digit)", for: .normal)
+        }
+    }
+}
+
+
+// MARK: - Supporting function
+
+extension SudokuView {
+    fileprivate func getSelectedBox() -> UIButton? {
+        for view in subviews {
+            if let button = view as? UIButton {
+                if button.isSelected {
+                    return button
+                }
+            }
+        }
+        return nil
+    }
+    
+    fileprivate func deselectBox() {
+        for view in subviews {
+            if let button = view as? UIButton {
+                if button.isSelected {
+                    button.toggle()
+                    break
+                }
+            }
+        }
+    }
+    
+    fileprivate func convertTo2DIdx(idx: Int) -> (Int, Int) {
+        let c = Int(idx / 9)
+        let r = Int(idx - 9 * c)
+        return (c, r)
+    }
+    
+    fileprivate func convertTo1DIdx(c: Int, r: Int) -> Int {
+        return 9 * c + r
     }
 }

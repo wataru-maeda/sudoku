@@ -19,7 +19,7 @@ class SudokuService {
     fileprivate var question = D2()
 }
 
-// MARK: - Accessor
+// MARK: - Getter, Setter
 
 extension SudokuService {
     internal func initQA(callback: GetQ) {
@@ -42,6 +42,11 @@ extension SudokuService {
     
     internal func getA() -> [Int] {
         return convert1D(d2: answer)
+    }
+    
+    internal func getSetQ(val: Int, c: Int, r: Int) ->  D2 {
+        question[c][r] = val
+        return question
     }
 }
 
