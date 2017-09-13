@@ -44,9 +44,12 @@ extension SudokuService {
         return convert1D(d2: answer)
     }
     
-    internal func getSetQ(val: Int, c: Int, r: Int) ->  D2 {
+    internal func getA(c: Int, r: Int) -> Int {
+        return answer[c][r]
+    }
+    
+    internal func setQ(val: Int, c: Int, r: Int) {
         question[c][r] = val
-        return question
     }
 }
 
@@ -87,33 +90,33 @@ extension SudokuService {
     }
     
     private func getValue(c: Int, r: Int) -> Int? {
-        let rowFilled = getRowFilled(c: c)
-        let colFilled = getColFilled(r: r)
-        let blockFilled = getBlockFilled(c: c, r: r)
+        let rowFilled = getRowFilled(d2: answer, c: c)
+        let colFilled = getColFilled(d2: answer, r: r)
+        let blockFilled = getBlockFilled(d2: answer, c: c, r: r)
         let filled = Array(Set(rowFilled + colFilled + blockFilled))
         let vals = removeFromRange(filled: filled)
         return vals.first
     }
     
-    private func getRowFilled(c: Int) -> [Int] {
+    private func getRowFilled(d2: D2, c: Int) -> [Int] {
         var filled = [Int]()
-        for i in 0..<answer[c].count {
-            let val = answer[c][i]
+        for i in 0..<d2[c].count {
+            let val = d2[c][i]
             filled.append(val)
         }
         return filled
     }
     
-    private func getColFilled(r: Int) -> [Int] {
+    private func getColFilled(d2: D2, r: Int) -> [Int] {
         var filled = [Int]()
-        for i in 0..<answer.count {
-            let val = answer[i][r]
+        for i in 0..<d2.count {
+            let val = d2[i][r]
             filled.append(val)
         }
         return filled
     }
     
-    private func getBlockFilled(c: Int, r: Int) -> [Int] {
+    private func getBlockFilled(d2: D2, c: Int, r: Int) -> [Int] {
         var filled = [Int]()
         var cRange = [Int]()
         var rRange = [Int]()
@@ -128,7 +131,7 @@ extension SudokuService {
         }
         for c in cRange {
             for r in rRange {
-                filled.append(answer[c][r])
+                filled.append(d2[c][r])
             }
         }
         return filled
@@ -139,6 +142,15 @@ extension SudokuService {
             if a.contains(0) { return true }
         }
         return false
+    }
+    
+    internal func isPossible(digit: Int, c: Int, r: Int) -> Bool {
+        let rowFilled = getRowFilled(d2: question, c: c)
+        let colFilled = getColFilled(d2: question, r: r)
+        let blockFilled = getBlockFilled(d2: question, c: c, r: r)
+        let filled = Array(Set(rowFilled + colFilled + blockFilled))
+        let vals = removeFromRange(filled: filled)
+        return vals.contains(digit)
     }
 }
 
@@ -169,6 +181,16 @@ extension SudokuService {
             }
         }
         return d1
+    }
+    
+    class func convertTo2DIdx(idx: Int) -> (Int, Int) {
+        let c = Int(idx / 9)
+        let r = Int(idx - 9 * c)
+        return (c, r)
+    }
+    
+    class func convertTo1DIdx(c: Int, r: Int) -> Int {
+        return 9 * c + r
     }
     
     fileprivate func removeFromRange(filled: [Int]) -> [Int]{

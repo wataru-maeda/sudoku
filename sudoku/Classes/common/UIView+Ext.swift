@@ -26,15 +26,25 @@ extension UIView {
         let forward = CATransform3DMakeScale(1.1, 1.1, 1)
         let back = CATransform3DMakeScale(0.9, 0.9, 1)
         let forward2 = CATransform3DMakeScale(1, 1, 1)
-        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform")
-        bounceAnimation.values = [
+        let animation = CAKeyframeAnimation(keyPath: "transform")
+        animation.values = [
             NSValue(caTransform3D: CATransform3DIdentity),
             NSValue(caTransform3D: forward),
             NSValue(caTransform3D: back),
             NSValue(caTransform3D: forward2)
         ]
-        bounceAnimation.keyTimes = [0, 0.3, 0.6, 1]
-        bounceAnimation.duration = 0.3
-        layer.add(bounceAnimation, forKey: "transform")
+        animation.keyTimes = [0, 0.3, 0.6, 1]
+        animation.duration = 0.3
+        layer.add(animation, forKey: "transform")
+    }
+    
+    func shake() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: center.x - 5, y: center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: center.x + 5, y: center.y))
+        layer.add(animation, forKey: "position")
     }
 }

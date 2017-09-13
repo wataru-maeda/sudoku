@@ -95,6 +95,10 @@ extension SudokuView {
 
 extension SudokuView {
     func selectBox(_ box: UIButton) {
+        if let selectedBox = getSelectedBox() {
+            // skip if the box is same with previous one
+            if selectedBox.tag == box.tag { return }
+        }
         deselectBox()
         box.toggle()
         box.bounce()
@@ -103,6 +107,11 @@ extension SudokuView {
     func clickedInputDigit(digit: Int) {
         if let selectedBox = getSelectedBox() {
             selectedBox.setTitle("\(digit)", for: .normal)
+            let idx = SudokuService.convertTo2DIdx(idx: selectedBox.tag)  // convert to (c,r)
+            SudokuService.shared.setQ(val: 0, c: idx.0, r: idx.1)
+            SudokuService.shared.isPossible(digit: digit, c: idx.0, r: idx.1) ?
+                selectedBox.bounce() : selectedBox.shake()
+            SudokuService.shared.setQ(val: digit, c: idx.0, r: idx.1)
         }
     }
 }
@@ -131,15 +140,5 @@ extension SudokuView {
                 }
             }
         }
-    }
-    
-    fileprivate func convertTo2DIdx(idx: Int) -> (Int, Int) {
-        let c = Int(idx / 9)
-        let r = Int(idx - 9 * c)
-        return (c, r)
-    }
-    
-    fileprivate func convertTo1DIdx(c: Int, r: Int) -> Int {
-        return 9 * c + r
     }
 }
