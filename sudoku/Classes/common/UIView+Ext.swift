@@ -10,14 +10,16 @@ import UIKit
 
 extension UIView {
     func dropShadow() {
-        self.layer.masksToBounds = false
-        self.layer.shouldRasterize = true
-        self.layer.shadowRadius = 5
-        self.layer.shadowOpacity = 0.3
-        self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.rasterizationScale = UIScreen.main.scale
+        layer.masksToBounds = false
+        layer.shouldRasterize = true
+        layer.borderWidth = 1
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.3
+        layer.borderColor = UIColor.KeyLightColor().cgColor
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.rasterizationScale = UIScreen.main.scale
     }
     
     func bounce() {
@@ -33,6 +35,6 @@ extension UIView {
         ]
         bounceAnimation.keyTimes = [0, 0.3, 0.6, 1]
         bounceAnimation.duration = 0.3
-        self.layer.add(bounceAnimation, forKey: "transform")
+        layer.add(bounceAnimation, forKey: "transform")
     }
 }

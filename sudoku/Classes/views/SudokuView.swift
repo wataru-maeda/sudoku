@@ -29,11 +29,17 @@ extension SudokuView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        createBoxs(rect: rect)
-        createSeparaters(rect: rect)
+        initGame(rect: rect)
     }
     
-    private func createBoxs(rect: CGRect) {
+    fileprivate func initGame(rect: CGRect) {
+        SudokuService.shared.initQA { (q) in
+            self.createBoxs(rect: rect, question: q)
+            self.createSeparaters(rect: rect)
+        }
+    }
+    
+    private func createBoxs(rect: CGRect, question: D2) {
         let boardLength = rect.size.width
         let boxLength = boardLength / 9
         for c in 0...8 {
@@ -44,7 +50,11 @@ extension SudokuView {
                     width: boxLength,
                     height: boxLength)
                 )
-                boxButton.setTitle("\(c * 9 + r)", for: .normal)
+                let val = question[c][r]
+                if val != 0 {
+                    boxButton.setTitle("\(val)", for: .normal)
+                    boxButton.isEnabled = false
+                }
                 boxButton.tag = c * 9 + r
                 boxButton.applyBoxStyle()
                 boxButton.addTarget(self, action: #selector(self.selectBox(_:)), for: .touchUpInside)

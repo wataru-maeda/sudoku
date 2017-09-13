@@ -9,21 +9,40 @@
 import UIKit
 
 typealias D2 = Array<Array<Int>>
+typealias GetQ = ((_ q: D2) -> Void)?
 
 class SudokuService {
     static var shared = SudokuService()
-    private init() {
-        setAnswer()
-        setQuestion()
-    }
+    private init() {}
+    
     fileprivate var answer = D2()
     fileprivate var question = D2()
 }
 
-// MARK: - Question
+// MARK: - Accessor
 
 extension SudokuService {
+    internal func initQA(callback: GetQ) {
+        setAnswer()
+        setQuestion()
+        callback?(question)
+    }
     
+    internal func getQ() -> D2 {
+        return question
+    }
+    
+    internal func getQ() -> [Int] {
+        return convert1D(d2: question)
+    }
+    
+    internal func getA() -> D2 {
+        return answer
+    }
+    
+    internal func getA() -> [Int] {
+        return convert1D(d2: answer)
+    }
 }
 
 // MARK: - Question
@@ -135,6 +154,16 @@ extension SudokuService {
             [0, 0, 0,  0, 0, 0,  0, 0, 0],
             [0, 0, 0,  0, 0, 0,  0, 0, 0]
         ]
+    }
+    
+    fileprivate func convert1D(d2: D2) -> [Int]{
+        var d1 = [Int]()
+        for row in d2 {
+            for val in row {
+                d1.append(val)
+            }
+        }
+        return d1
     }
     
     fileprivate func removeFromRange(filled: [Int]) -> [Int]{
