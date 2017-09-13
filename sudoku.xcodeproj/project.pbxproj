@@ -21,6 +21,7 @@
 		04AF4A9F1F69367400011550 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A9E1F69367400011550 /* UIFont+Ext.swift */; };
 		04AF4AA11F693A5C00011550 /* SudokuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4AA01F693A5C00011550 /* SudokuService.swift */; };
 		04AF4AA31F693B2B00011550 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4AA21F693B2B00011550 /* Array+Ext.swift */; };
+		04AF4AA81F69434A00011550 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4AA71F69434A00011550 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		04AF4A9E1F69367400011550 /* UIFont+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		04AF4AA01F693A5C00011550 /* SudokuService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuService.swift; sourceTree = "<group>"; };
 		04AF4AA21F693B2B00011550 /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		04AF4AA71F69434A00011550 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		04AF4A8A1F690D9900011550 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				04AF4AA61F69434400011550 /* image */,
 				041469561F68FF32003250B2 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -155,6 +158,14 @@
 			path = subview;
 			sourceTree = "<group>";
 		};
+		04AF4AA61F69434400011550 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				04AF4AA71F69434A00011550 /* icon.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0414695A1F68FF32003250B2 /* LaunchScreen.storyboard in Resources */,
+				04AF4AA81F69434A00011550 /* icon.png in Resources */,
 				04AF4A921F690E4F00011550 /* subview.xib in Resources */,
 				041469571F68FF32003250B2 /* Assets.xcassets in Resources */,
 				041469551F68FF32003250B2 /* Main.storyboard in Resources */,
