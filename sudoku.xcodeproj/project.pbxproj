@@ -17,6 +17,8 @@
 		04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A961F6911ED00011550 /* UIView+Ext.swift */; };
 		04AF4A991F6928E400011550 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A981F6928E400011550 /* SudokuView.swift */; };
 		04AF4A9B1F692BF200011550 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A9A1F692BF200011550 /* UIColor+Ext.swift */; };
+		04AF4A9D1F69331700011550 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A9C1F69331700011550 /* UIButton+Ext.swift */; };
+		04AF4A9F1F69367400011550 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A9E1F69367400011550 /* UIFont+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		04AF4A961F6911ED00011550 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		04AF4A981F6928E400011550 /* SudokuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
 		04AF4A9A1F692BF200011550 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		04AF4A9C1F69331700011550 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		04AF4A9E1F69367400011550 /* UIFont+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				04AF4A961F6911ED00011550 /* UIView+Ext.swift */,
 				04AF4A9A1F692BF200011550 /* UIColor+Ext.swift */,
+				04AF4A9C1F69331700011550 /* UIButton+Ext.swift */,
+				04AF4A9E1F69367400011550 /* UIFont+Ext.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -218,7 +224,9 @@
 			files = (
 				04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */,
 				04AF4A991F6928E400011550 /* SudokuView.swift in Sources */,
+				04AF4A9D1F69331700011550 /* UIButton+Ext.swift in Sources */,
 				04AF4A941F690E8300011550 /* MainViewController.swift in Sources */,
+				04AF4A9F1F69367400011550 /* UIFont+Ext.swift in Sources */,
 				04AF4A9B1F692BF200011550 /* UIColor+Ext.swift in Sources */,
 				041469521F68FF32003250B2 /* ViewController.swift in Sources */,
 				041469501F68FF32003250B2 /* AppDelegate.swift in Sources */,

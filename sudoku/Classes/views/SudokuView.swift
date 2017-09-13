@@ -45,8 +45,8 @@ extension SudokuView {
                     height: boxLength)
                 )
                 boxButton.setTitle("\(c * 9 + r)", for: .normal)
-                boxButton.setTitleColor(.darkGray, for: .normal)
                 boxButton.tag = c * 9 + r
+                boxButton.applyBoxStyle()
                 boxButton.addTarget(self, action: #selector(self.selectBox(_:)), for: .touchUpInside)
                 self.addSubview(boxButton)
             }
@@ -86,5 +86,7 @@ extension SudokuView {
 extension SudokuView {
     func selectBox(_ box: UIButton) {
         print(box.tag)
+        box.toggle()
+        box.bounce()
     }
 }

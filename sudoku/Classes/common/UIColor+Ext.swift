@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIColor {
+    class func keyColor() -> UIColor {
+        return UIColor(red:0.549, green:0.757, blue:0.918, alpha:1.000)
+    }
+    
     class func lightGrayWithAlpha03() -> UIColor {
         return UIColor.lightGray.withAlphaComponent(0.3)
     }
