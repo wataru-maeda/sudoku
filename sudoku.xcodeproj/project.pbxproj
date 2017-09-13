@@ -198,7 +198,6 @@
 				TargetAttributes = {
 					0414694B1F68FF32003250B2 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3TNAJJ5Z2T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -377,7 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3TNAJJ5Z2T;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = sudoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -391,7 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3TNAJJ5Z2T;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = sudoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
