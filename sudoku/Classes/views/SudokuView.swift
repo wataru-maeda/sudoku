@@ -127,7 +127,9 @@ extension SudokuView {
     func clickCheat() {
         if let cheat = SudokuService.shared.getCheat() {
             let idx = SudokuService.convertTo1DIdx(c: cheat.1, r: cheat.2)
-            if let cheatButton = viewWithTag(idx) as? UIButton {
+            if let cheatButton = idx == 0 ?
+                getZeroTagBox() :
+                viewWithTag(idx) as? UIButton {
                 cheatButton.setTitle("\(cheat.0)", for: .normal)
                 SudokuService.shared.setQ(val: cheat.0, c: cheat.1, r: cheat.2)
                 cheatButton.isEnabled = false
@@ -143,6 +145,17 @@ extension SudokuView {
 // MARK: - Supporting function
 
 extension SudokuView {
+    fileprivate func getZeroTagBox() -> UIButton? {
+        for view in subviews {
+            if let button = view as? UIButton {
+                if button.tag == 0 {
+                    return button
+                }
+            }
+        }
+        return nil
+    }
+    
     fileprivate func getSelectedBox() -> UIButton? {
         for view in subviews {
             if let button = view as? UIButton {
