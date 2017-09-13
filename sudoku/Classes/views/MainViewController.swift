@@ -38,6 +38,7 @@ extension MainViewController {
         for view in menuView.subviews {
             if let button = view as? UIButton {
                 button.layer.cornerRadius = 5
+                button.imageView?.contentMode = .scaleAspectFit
             }
         }
         for view in inputDigitView.subviews {
