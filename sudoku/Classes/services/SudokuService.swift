@@ -53,6 +53,22 @@ extension SudokuService {
     }
 }
 
+// MARK: - Cheating
+
+extension SudokuService {
+    internal func getCheat() -> (Int, Int, Int)? {
+        var cr = [(Int, Int, Int)]()
+        for c in 0...8 {
+            for r in 0...8 {
+                if question[c][r] == 0 {
+                    cr.append((answer[c][r], c, r))
+                }
+            }
+        }
+        return cr.shuffled().first ?? nil
+    }
+}
+
 // MARK: - Question
 
 extension SudokuService {

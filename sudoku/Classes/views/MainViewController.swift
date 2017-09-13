@@ -74,6 +74,7 @@ extension MainViewController {
     
     @IBAction func clickCheat(_ sender: UIButton) {
         sender.bounce()
+        sudokuView.clickCheat()
     }
     
     @IBAction func clickErase(_ sender: UIButton) {

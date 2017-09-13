@@ -123,6 +123,20 @@ extension SudokuView {
             selectedBox.bounce()
         }
     }
+    
+    func clickCheat() {
+        if let cheat = SudokuService.shared.getCheat() {
+            let idx = SudokuService.convertTo1DIdx(c: cheat.1, r: cheat.2)
+            if let cheatButton = viewWithTag(idx) as? UIButton {
+                cheatButton.setTitle("\(cheat.0)", for: .normal)
+                SudokuService.shared.setQ(val: cheat.0, c: cheat.1, r: cheat.2)
+                cheatButton.isEnabled = false
+                cheatButton.bounce()
+            } else {
+                clickCheat()
+            }
+        }
+    }
 }
 
 
