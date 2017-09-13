@@ -15,6 +15,8 @@
 		04AF4A921F690E4F00011550 /* subview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4A911F690E4F00011550 /* subview.xib */; };
 		04AF4A941F690E8300011550 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A931F690E8300011550 /* MainViewController.swift */; };
 		04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A961F6911ED00011550 /* UIView+Ext.swift */; };
+		04AF4A991F6928E400011550 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A981F6928E400011550 /* SudokuView.swift */; };
+		04AF4A9B1F692BF200011550 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A9A1F692BF200011550 /* UIColor+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		04AF4A911F690E4F00011550 /* subview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = subview.xib; path = sudoku/Classes/views/subview.xib; sourceTree = SOURCE_ROOT; };
 		04AF4A931F690E8300011550 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04AF4A961F6911ED00011550 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		04AF4A981F6928E400011550 /* SudokuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		04AF4A9A1F692BF200011550 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				04AF4A961F6911ED00011550 /* UIView+Ext.swift */,
+				04AF4A9A1F692BF200011550 /* UIColor+Ext.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			children = (
 				041469531F68FF32003250B2 /* Main.storyboard */,
 				04AF4A931F690E8300011550 /* MainViewController.swift */,
+				04AF4A981F6928E400011550 /* SudokuView.swift */,
 				04AF4A951F690F3400011550 /* subview */,
 			);
 			path = views;
@@ -211,7 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */,
+				04AF4A991F6928E400011550 /* SudokuView.swift in Sources */,
 				04AF4A941F690E8300011550 /* MainViewController.swift in Sources */,
+				04AF4A9B1F692BF200011550 /* UIColor+Ext.swift in Sources */,
 				041469521F68FF32003250B2 /* ViewController.swift in Sources */,
 				041469501F68FF32003250B2 /* AppDelegate.swift in Sources */,
 			);

@@ -45,7 +45,7 @@ extension MainViewController {
             if let button = view as? UIButton {
                 button.layer.borderWidth = 3
                 button.layer.cornerRadius = 5
-                button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
+                button.layer.borderColor = UIColor.lightGrayWithAlpha03().cgColor
             }
         }
     }
