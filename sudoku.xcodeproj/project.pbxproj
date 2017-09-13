@@ -17,11 +17,11 @@
 /* Begin PBXFileReference section */
 		0414694C1F68FF32003250B2 /* sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0414694F1F68FF32003250B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		041469511F68FF32003250B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		041469511F68FF32003250B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		041469541F68FF32003250B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		041469561F68FF32003250B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		041469561F68FF32003250B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = sudoku/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		041469591F68FF32003250B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0414695B1F68FF32003250B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0414695B1F68FF32003250B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,69 @@
 			isa = PBXGroup;
 			children = (
 				0414694F1F68FF32003250B2 /* AppDelegate.swift */,
-				041469511F68FF32003250B2 /* ViewController.swift */,
-				041469531F68FF32003250B2 /* Main.storyboard */,
-				041469561F68FF32003250B2 /* Assets.xcassets */,
-				041469581F68FF32003250B2 /* LaunchScreen.storyboard */,
-				0414695B1F68FF32003250B2 /* Info.plist */,
+				04AF4A8A1F690D9900011550 /* Assets */,
+				04AF4A8B1F690D9900011550 /* Classes */,
+				04AF4A901F690D9900011550 /* Supporting files */,
 			);
 			path = sudoku;
+			sourceTree = "<group>";
+		};
+		04AF4A8A1F690D9900011550 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				041469561F68FF32003250B2 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		04AF4A8B1F690D9900011550 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04AF4A8C1F690D9900011550 /* common */,
+				04AF4A8D1F690D9900011550 /* models */,
+				04AF4A8E1F690D9900011550 /* services */,
+				04AF4A8F1F690D9900011550 /* views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04AF4A8C1F690D9900011550 /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		04AF4A8D1F690D9900011550 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		04AF4A8E1F690D9900011550 /* services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		04AF4A8F1F690D9900011550 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				041469531F68FF32003250B2 /* Main.storyboard */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		04AF4A901F690D9900011550 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				041469511F68FF32003250B2 /* ViewController.swift */,
+				0414695B1F68FF32003250B2 /* Info.plist */,
+				041469581F68FF32003250B2 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +206,7 @@
 				041469541F68FF32003250B2 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		041469581F68FF32003250B2 /* LaunchScreen.storyboard */ = {
@@ -158,6 +215,7 @@
 				041469591F68FF32003250B2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -301,6 +359,7 @@
 				041469601F68FF32003250B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
