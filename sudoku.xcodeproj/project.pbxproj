@@ -12,6 +12,7 @@
 		041469551F68FF32003250B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041469531F68FF32003250B2 /* Main.storyboard */; };
 		041469571F68FF32003250B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041469561F68FF32003250B2 /* Assets.xcassets */; };
 		0414695A1F68FF32003250B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041469581F68FF32003250B2 /* LaunchScreen.storyboard */; };
+		04199A481F6A7829005488F8 /* SubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04199A471F6A7829005488F8 /* SubViews.swift */; };
 		04AF4A921F690E4F00011550 /* subview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4A911F690E4F00011550 /* subview.xib */; };
 		04AF4A941F690E8300011550 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A931F690E8300011550 /* MainViewController.swift */; };
 		04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A961F6911ED00011550 /* UIView+Ext.swift */; };
@@ -32,6 +33,7 @@
 		041469561F68FF32003250B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = sudoku/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		041469591F68FF32003250B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0414695B1F68FF32003250B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		04199A471F6A7829005488F8 /* SubViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViews.swift; sourceTree = "<group>"; };
 		04AF4A911F690E4F00011550 /* subview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = subview.xib; path = sudoku/Classes/views/subview.xib; sourceTree = SOURCE_ROOT; };
 		04AF4A931F690E8300011550 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04AF4A961F6911ED00011550 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				04AF4A911F690E4F00011550 /* subview.xib */,
+				04199A471F6A7829005488F8 /* SubViews.swift */,
 			);
 			path = subview;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */,
+				04199A481F6A7829005488F8 /* SubViews.swift in Sources */,
 				04AF4A991F6928E400011550 /* SudokuView.swift in Sources */,
 				04AF4A9D1F69331700011550 /* UIButton+Ext.swift in Sources */,
 				04AF4A941F690E8300011550 /* MainViewController.swift in Sources */,

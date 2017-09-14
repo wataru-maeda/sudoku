@@ -1,16 +1,187 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OptionView" customModule="sudoku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="262"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sudoku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUC-6F-ndK">
+                    <rect key="frame" x="135" y="30" width="105" height="41"/>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
+                    <color key="textColor" red="0.5490196078431373" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y1n-2A-aLx">
+                    <rect key="frame" x="24" y="101" width="326" height="29"/>
+                    <segments>
+                        <segment title="Easy"/>
+                        <segment title="Intermediate"/>
+                        <segment title="Expart"/>
+                    </segments>
+                    <color key="tintColor" red="0.48150417574437188" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="changeLevel:" destination="iN0-l3-epB" eventType="valueChanged" id="g6Y-bm-rHe"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9k-fy-mXO">
+                    <rect key="frame" x="24" y="189" width="326" height="43"/>
+                    <color key="backgroundColor" red="0.5490196078431373" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="24"/>
+                    <state key="normal" title="Play">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="play:" destination="iN0-l3-epB" eventType="touchUpInside" id="L6r-3v-dKS"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="y1n-2A-aLx" firstAttribute="top" secondItem="xUC-6F-ndK" secondAttribute="bottom" constant="30" id="3R1-a8-pJN"/>
+                <constraint firstItem="J9k-fy-mXO" firstAttribute="top" secondItem="y1n-2A-aLx" secondAttribute="bottom" constant="60" id="Jwe-Uz-35K"/>
+                <constraint firstItem="y1n-2A-aLx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="PU4-w9-Qqa"/>
+                <constraint firstItem="y1n-2A-aLx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZPt-0A-xfN"/>
+                <constraint firstAttribute="bottom" secondItem="J9k-fy-mXO" secondAttribute="bottom" constant="30" id="b8A-NL-Yd9"/>
+                <constraint firstItem="xUC-6F-ndK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ceM-lO-Wyh"/>
+                <constraint firstItem="y1n-2A-aLx" firstAttribute="trailing" secondItem="J9k-fy-mXO" secondAttribute="trailing" id="cer-Ao-djj"/>
+                <constraint firstAttribute="trailing" secondItem="y1n-2A-aLx" secondAttribute="trailing" constant="24" id="sV6-xm-YSE"/>
+                <constraint firstItem="y1n-2A-aLx" firstAttribute="leading" secondItem="J9k-fy-mXO" secondAttribute="leading" id="tx2-2w-oWK"/>
+                <constraint firstItem="xUC-6F-ndK" firstAttribute="centerX" secondItem="y1n-2A-aLx" secondAttribute="centerX" id="vr6-R1-ULF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-137"/>
+        </view>
+        <view contentMode="scaleToFill" id="FKU-ii-YrA" customClass="PauseView" customModule="sudoku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="262"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Y-fW-RdV">
+                    <rect key="frame" x="135" y="30" width="105" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="W12-LF-bWv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
+                    <color key="textColor" red="0.54901960780000003" green="0.75686274509999996" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edT-x1-cfH">
+                    <rect key="frame" x="24" y="189" width="326" height="43"/>
+                    <color key="backgroundColor" red="0.54901960780000003" green="0.75686274509999996" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="24"/>
+                    <state key="normal" title="Resume">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="resume:" destination="FKU-ii-YrA" eventType="touchUpInside" id="OVs-it-aOV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNY-fB-Ifi">
+                    <rect key="frame" x="24" y="128" width="326" height="43"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="24"/>
+                    <state key="normal" title="Start New Game">
+                        <color key="titleColor" red="0.5490196078431373" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="startNewGame:" destination="FKU-ii-YrA" eventType="touchUpInside" id="aAS-eU-ncZ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="edT-x1-cfH" secondAttribute="bottom" constant="30" id="0YM-C0-PB8"/>
+                <constraint firstItem="hNY-fB-Ifi" firstAttribute="top" secondItem="23Y-fW-RdV" secondAttribute="bottom" constant="57" id="3Gx-WH-ibI"/>
+                <constraint firstItem="hNY-fB-Ifi" firstAttribute="leading" secondItem="FKU-ii-YrA" secondAttribute="leading" constant="24" id="6zS-hq-XHu"/>
+                <constraint firstItem="hNY-fB-Ifi" firstAttribute="leading" secondItem="edT-x1-cfH" secondAttribute="leading" id="Jo3-CC-vPe"/>
+                <constraint firstItem="hNY-fB-Ifi" firstAttribute="centerX" secondItem="FKU-ii-YrA" secondAttribute="centerX" id="PXa-B6-wdQ"/>
+                <constraint firstItem="23Y-fW-RdV" firstAttribute="centerX" secondItem="hNY-fB-Ifi" secondAttribute="centerX" id="Tdy-wR-wRf"/>
+                <constraint firstAttribute="trailing" secondItem="hNY-fB-Ifi" secondAttribute="trailing" constant="24" id="XyX-J6-E9j"/>
+                <constraint firstItem="edT-x1-cfH" firstAttribute="top" secondItem="hNY-fB-Ifi" secondAttribute="bottom" constant="18" id="eUe-Qt-7Gk"/>
+                <constraint firstItem="hNY-fB-Ifi" firstAttribute="trailing" secondItem="edT-x1-cfH" secondAttribute="trailing" id="k3j-jf-SDA"/>
+                <constraint firstItem="23Y-fW-RdV" firstAttribute="top" secondItem="FKU-ii-YrA" secondAttribute="top" constant="30" id="yhh-vS-T3G"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34" y="212"/>
+        </view>
+        <view contentMode="scaleToFill" id="yEG-lC-taa" customClass="GoodJobView" customModule="sudoku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="318"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M1-9d-gkS">
+                    <rect key="frame" x="24" y="245" width="326" height="43"/>
+                    <color key="backgroundColor" red="0.54901960780000003" green="0.75686274509999996" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="pJ9-dZ-xRQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="24"/>
+                    <state key="normal" title="Finish">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismiss:" destination="yEG-lC-taa" eventType="touchUpInside" id="jip-Xj-b1h"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-Jp-fl4">
+                    <rect key="frame" x="106" y="28" width="162" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="162" id="Ay6-RP-rm4"/>
+                        <constraint firstAttribute="height" constant="41" id="pHT-eT-62l"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
+                    <color key="textColor" red="0.54901960780000003" green="0.75686274509999996" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="en0-Nz-Ssr">
+                    <rect key="frame" x="147" y="89" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="sPY-k0-1wy"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Job!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rID-sa-yLP">
+                    <rect key="frame" x="106" y="177" width="162" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="txK-LQ-NBk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="24"/>
+                    <color key="textColor" red="0.54901960780000003" green="0.75686274509999996" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1M1-9d-gkS" secondAttribute="trailing" constant="24" id="0cm-FF-oru"/>
+                <constraint firstItem="rID-sa-yLP" firstAttribute="centerX" secondItem="1M1-9d-gkS" secondAttribute="centerX" id="9Di-M3-VA2"/>
+                <constraint firstItem="1M1-9d-gkS" firstAttribute="top" secondItem="rID-sa-yLP" secondAttribute="bottom" constant="27" id="BrL-pz-R1o"/>
+                <constraint firstItem="yWz-Jp-fl4" firstAttribute="leading" secondItem="rID-sa-yLP" secondAttribute="leading" id="GfU-zu-uf4"/>
+                <constraint firstAttribute="bottom" secondItem="1M1-9d-gkS" secondAttribute="bottom" constant="30" id="O5n-V8-WRE"/>
+                <constraint firstItem="en0-Nz-Ssr" firstAttribute="top" secondItem="yWz-Jp-fl4" secondAttribute="bottom" constant="20" id="YEx-PJ-ts7"/>
+                <constraint firstItem="1M1-9d-gkS" firstAttribute="leading" secondItem="yEG-lC-taa" secondAttribute="leading" constant="24" id="cZS-eu-wjf"/>
+                <constraint firstItem="en0-Nz-Ssr" firstAttribute="centerX" secondItem="rID-sa-yLP" secondAttribute="centerX" id="jHP-0S-wE0"/>
+                <constraint firstItem="yWz-Jp-fl4" firstAttribute="trailing" secondItem="rID-sa-yLP" secondAttribute="trailing" id="lvj-96-n0n"/>
+                <constraint firstItem="yWz-Jp-fl4" firstAttribute="centerX" secondItem="yEG-lC-taa" secondAttribute="centerX" id="uDj-d9-muq"/>
+                <constraint firstItem="yWz-Jp-fl4" firstAttribute="top" secondItem="yEG-lC-taa" secondAttribute="top" constant="28" id="v9p-ph-q1l"/>
+                <constraint firstItem="rID-sa-yLP" firstAttribute="top" secondItem="en0-Nz-Ssr" secondAttribute="bottom" constant="8" symbolic="YES" id="xID-Lf-8pk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="timerLabel" destination="yWz-Jp-fl4" id="mGi-1X-nDT"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="612.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="success" width="256" height="256"/>
+    </resources>
 </document>
