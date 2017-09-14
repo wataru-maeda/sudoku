@@ -23,34 +23,37 @@ class SudokuService {
 // MARK: - Getter, Setter
 
 extension SudokuService {
-    internal func initQA(callback: GetQ) {
+    func initA(callback: ()->()) {
+        setAnswer()
+        callback()
+    }
+    
+    func initQ(callback: GetQ) {
+        startProcess()
+        setQuestion()
+        callback?(question)
+    }
+    
+    func initQA(callback: GetQ) {
         startProcess()
         setAnswer()
         setQuestion()
         callback?(question)
     }
     
-    internal func get2DQ() -> D2 {
+    func get2DQ() -> D2 {
         return question
     }
     
-    internal func get1DQ() -> [Int] {
-        return convert1D(d2: question)
-    }
-    
-    internal func get2DA() -> D2 {
+    func get2DA() -> D2 {
         return answer
     }
     
-    internal func get1DA() -> [Int] {
-        return convert1D(d2: answer)
-    }
-    
-    internal func getA(c: Int, r: Int) -> Int {
+    func getA(c: Int, r: Int) -> Int {
         return answer[c][r]
     }
     
-    internal func setQ(val: Int, c: Int, r: Int) {
+    func setQ(val: Int, c: Int, r: Int) {
         question[c][r] = val
     }
 }

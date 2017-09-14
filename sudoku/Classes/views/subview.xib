@@ -59,6 +59,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="playButton" destination="J9k-fy-mXO" id="Ssc-bY-WUe"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="-137"/>
         </view>
         <view contentMode="scaleToFill" id="FKU-ii-YrA" customClass="PauseView" customModule="sudoku" customModuleProvider="target">

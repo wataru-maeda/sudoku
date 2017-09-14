@@ -17,6 +17,9 @@ class MainViewController: UIViewController {
             sudokuView.layer.cornerRadius = 5
             sudokuView.clipsToBounds = true
             sudokuView.dropShadow()
+            sudokuView.finishGameCallback = {
+                self.showSubview(type: .Result)
+            }
         }
     }
     fileprivate lazy var overlayView: UIView = {
@@ -78,26 +81,31 @@ extension MainViewController {
         subview?.alpha = 0
         view.addSubview(overlayView)
         view.addSubview(subview!)
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            subview?.alpha = 1
+            subview?.center = self.view.center
             self.overlayView.alpha = 1
-        }, completion: { finished in
-            UIView.animate(withDuration: 0.3, animations: {
-                subview?.alpha = 1
-                subview?.center = self.view.center
-            })
-        })
+        }, completion: nil)
     }
     
     private func getOptionView(width: CGFloat) -> OptionView {
         let optionView = OptionView.getView(newWidth: width)
         optionView.dismissBlock = {
             self.dismissSubview(subview: optionView)
+            self.sudokuView.startGame()
+        }
+        SudokuService.shared.initA {
+            optionView.playButton.isEnabled = true
         }
         return optionView
     }
     
     private func getPauseView(width: CGFloat) -> PauseView {
         let pauseView = PauseView.getView(newWidth: width)
+        pauseView.restartBlock = {
+            self.sudokuView.restartGame()
+            self.dismissSubview(subview: pauseView)
+        }
         pauseView.dismissBlock = {
             self.dismissSubview(subview: pauseView)
         }

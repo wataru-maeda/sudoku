@@ -9,6 +9,8 @@
 import UIKit
 
 class SudokuView: UIView {
+    var finishGameCallback: ()->() = {_ in}
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.initView()
@@ -23,20 +25,29 @@ class SudokuView: UIView {
 // MARK: - UI
 
 extension SudokuView {
+    func startGame() {
+        for view in subviews { view.removeFromSuperview() }
+        SudokuService.shared.initQ { (q) in
+            self.createBoxs(rect: self.frame, question: q)
+            self.createSeparaters(rect: self.frame)
+        }
+    }
+    
+    func restartGame() {
+        for view in subviews { view.removeFromSuperview() }
+        SudokuService.shared.initQA { (q) in
+            self.createBoxs(rect: self.frame, question: q)
+            self.createSeparaters(rect: self.frame)
+        }
+    }
+    
     fileprivate func initView() {
         backgroundColor = .white
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        initGame(rect: rect)
-    }
-    
-    fileprivate func initGame(rect: CGRect) {
-        SudokuService.shared.initQA { (q) in
-            self.createBoxs(rect: rect, question: q)
-            self.createSeparaters(rect: rect)
-        }
+        self.createSeparaters(rect: rect)
     }
     
     private func createBoxs(rect: CGRect, question: D2) {
@@ -184,6 +195,8 @@ extension SudokuView {
                 btns.removeFirst()
                 self.showCompletionAnimation(buttons: btns)
             }
+        } else {
+            finishGameCallback()
         }
     }
 }

@@ -16,14 +16,19 @@ public enum SubviewType {
 
 class OptionView: UIView {
     var dismissBlock: ()->() = {_ in}
+    @IBOutlet var playButton: UIButton! {
+        didSet { playButton.isEnabled = false }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = .white
+        backgroundColor = .white
+        layer.cornerRadius = 5
+        clipsToBounds = true
     }
     
     @IBAction func changeLevel(_ sender: UISegmentedControl) {
@@ -49,18 +54,20 @@ class OptionView: UIView {
 
 class PauseView: UIView {
     var dismissBlock: ()->() = {_ in}
+    var restartBlock: ()->() = {_ in}
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = .white
+        backgroundColor = .white
+        layer.cornerRadius = 5
+        clipsToBounds = true
     }
     
     @IBAction func startNewGame() {
-        dismissBlock()
+        restartBlock()
     }
     
     @IBAction func resume() {
@@ -87,12 +94,13 @@ class ResultView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = .white
+        backgroundColor = .white
+        layer.cornerRadius = 5
+        clipsToBounds = true
     }
     
     @IBAction func dismiss() {
