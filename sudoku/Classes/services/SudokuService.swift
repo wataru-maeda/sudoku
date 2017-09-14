@@ -24,7 +24,7 @@ class SudokuService {
 
 extension SudokuService {
     internal func initQA(callback: GetQ) {
-        setMonitoring()
+        startProcess()
         setAnswer()
         setQuestion()
         callback?(question)
@@ -58,7 +58,7 @@ extension SudokuService {
 // MARK: - Undo
 
 extension SudokuService {
-    fileprivate func setMonitoring() {
+    fileprivate func startProcess() {
         monitoring = [get2D()]
     }
     
@@ -238,5 +238,18 @@ extension SudokuService {
             }
         }
         return range.shuffled()
+    }
+    
+    func didComplete() -> Bool {
+        for c in 0...8 {
+            for r in 0...8 {
+                if question[c][r] == 0 {
+                    return false
+                } else if answer[c][r] != question[c][r] {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }

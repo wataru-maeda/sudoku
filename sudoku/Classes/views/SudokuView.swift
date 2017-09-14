@@ -113,6 +113,7 @@ extension SudokuView {
                 selectedBox.bounce() : selectedBox.shake()
             SudokuService.shared.setQ(val: digit, c: idx.0, r: idx.1)
             SudokuService.shared.setProcess()
+            finishGameIfCompleted()
         }
     }
     
@@ -134,8 +135,10 @@ extension SudokuView {
                 viewWithTag(idx) as? UIButton {
                 cheatButton.setTitle("\(cheat.0)", for: .normal)
                 SudokuService.shared.setQ(val: cheat.0, c: cheat.1, r: cheat.2)
+                cheatButton.isSelected = false
                 cheatButton.isEnabled = false
                 cheatButton.bounce()
+                finishGameIfCompleted()
             } else {
                 clickCheat()
             }
@@ -152,6 +155,34 @@ extension SudokuView {
                         button.setTitle(val == 0 ? "" : "\(val)", for: .normal)
                     }
                 }
+            }
+        }
+    }
+}
+
+// MARK: - Animation
+
+extension SudokuView {
+    fileprivate func finishGameIfCompleted() {
+        if SudokuService.shared.didComplete() {
+            var buttons = [UIButton]()
+            for view in subviews {
+                if let button = view as? UIButton {
+                    buttons.append(button)
+                }
+            }
+            showCompletionAnimation(buttons: buttons)
+        }
+    }
+    
+    private func showCompletionAnimation(buttons: [UIButton]) {
+        if let button = buttons.first {
+            button.isEnabled = false
+            button.fadein {
+                button.bounce()
+                var btns = buttons
+                btns.removeFirst()
+                self.showCompletionAnimation(buttons: btns)
             }
         }
     }

@@ -45,4 +45,26 @@ extension UIView {
         animation.toValue = NSValue(cgPoint: CGPoint(x: center.x + 5, y: center.y))
         layer.add(animation, forKey: "position")
     }
+    
+    func round(callback: @escaping ()->()) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            callback()
+        })
+        let rotationAnimation = CABasicAnimation(keyPath:"transform.rotation.z")
+        rotationAnimation.toValue = CGFloat(Double.pi / 180) * 360
+        rotationAnimation.duration = 0.04
+        rotationAnimation.repeatCount = 1
+        layer.add(rotationAnimation, forKey: "rotationAnimation")
+        CATransaction.commit()
+    }
+    
+    func fadein(callback: @escaping ()->()) {
+        alpha = 0
+        UIView.animate(withDuration: 0.04, animations: {
+            self.alpha = 1
+        }, completion: { finished in
+            callback()
+        })
+    }
 }
