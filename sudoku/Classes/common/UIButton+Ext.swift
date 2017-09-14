@@ -17,7 +17,7 @@ extension UIButton {
         setTitleColor(.white, for: .disabled)
         setBackgroundColor(.white, forState: .normal)
         setBackgroundColor(.white, forState: .selected)
-        setBackgroundColor(.keyColor(), forState: .disabled)
+        setBackgroundColor(UIColor.keyColorWithAlpha07(), forState: .disabled)
     }
     
     func toggle() {
@@ -27,7 +27,7 @@ extension UIButton {
             layer.borderColor = UIColor.clear.cgColor
         } else {
             layer.borderWidth = 2
-            layer.borderColor = UIColor.keyColor().cgColor
+            layer.borderColor = UIColor.keyColorWithAlpha07().cgColor
         }
     }
     

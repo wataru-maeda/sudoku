@@ -74,7 +74,7 @@ extension SudokuView {
                 height: boardLength)
             )
             lineView.backgroundColor = r % 3 == 0 ?
-                .lightGray : UIColor.lightGrayWithAlpha03()
+                UIColor.keyColor() : UIColor.lightGrayWithAlpha03()
             self.addSubview(lineView)
         }
         for c in 1...9 {
@@ -85,7 +85,7 @@ extension SudokuView {
                 height: 1)
             )
             lineView.backgroundColor = c % 3 == 0 ?
-                .lightGray : UIColor.lightGrayWithAlpha03()
+                UIColor.keyColor() : UIColor.lightGrayWithAlpha03()
             self.addSubview(lineView)
         }
     }

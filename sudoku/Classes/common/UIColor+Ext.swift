@@ -17,6 +17,10 @@ extension UIColor {
         return UIColor(red:0.976, green:0.980, blue:0.992, alpha:1.000)
     }
     
+    class func keyColorWithAlpha07() -> UIColor {
+        return keyColor().withAlphaComponent(0.7)
+    }
+    
     class func lightGrayWithAlpha03() -> UIColor {
         return UIColor.lightGray.withAlphaComponent(0.3)
     }
