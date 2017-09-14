@@ -84,6 +84,7 @@ extension MainViewController {
     
     @IBAction func clickUndo(_ sender: UIButton) {
         sender.bounce()
+        sudokuView.clickUndo()
     }
     
     @IBAction func clickTimerPlay(_ sender: UIButton) {

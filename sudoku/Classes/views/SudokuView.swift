@@ -112,6 +112,7 @@ extension SudokuView {
             SudokuService.shared.isPossible(digit: digit, c: idx.0, r: idx.1) ?
                 selectedBox.bounce() : selectedBox.shake()
             SudokuService.shared.setQ(val: digit, c: idx.0, r: idx.1)
+            SudokuService.shared.setProcess()
         }
     }
     
@@ -121,6 +122,7 @@ extension SudokuView {
             SudokuService.shared.setQ(val: 0, c: idx.0, r: idx.1)
             selectedBox.setTitle("", for: .normal)
             selectedBox.bounce()
+            SudokuService.shared.setProcess()
         }
     }
     
@@ -136,6 +138,20 @@ extension SudokuView {
                 cheatButton.bounce()
             } else {
                 clickCheat()
+            }
+        }
+    }
+    
+    func clickUndo() {
+        if let last = SudokuService.shared.getLastProcess() {
+            for view in subviews {
+                if let button = view as? UIButton {
+                    if button.isEnabled {
+                        let idx = SudokuService.convertTo2DIdx(idx: button.tag)
+                        let val = last[idx.0][idx.1]
+                        button.setTitle(val == 0 ? "" : "\(val)", for: .normal)
+                    }
+                }
             }
         }
     }

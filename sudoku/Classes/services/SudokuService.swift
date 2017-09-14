@@ -17,30 +17,32 @@ class SudokuService {
     
     fileprivate var answer = D2()
     fileprivate var question = D2()
+    fileprivate var monitoring = [D2]()
 }
 
 // MARK: - Getter, Setter
 
 extension SudokuService {
     internal func initQA(callback: GetQ) {
+        setMonitoring()
         setAnswer()
         setQuestion()
         callback?(question)
     }
     
-    internal func getQ() -> D2 {
+    internal func get2DQ() -> D2 {
         return question
     }
     
-    internal func getQ() -> [Int] {
+    internal func get1DQ() -> [Int] {
         return convert1D(d2: question)
     }
     
-    internal func getA() -> D2 {
+    internal func get2DA() -> D2 {
         return answer
     }
     
-    internal func getA() -> [Int] {
+    internal func get1DA() -> [Int] {
         return convert1D(d2: answer)
     }
     
@@ -50,6 +52,25 @@ extension SudokuService {
     
     internal func setQ(val: Int, c: Int, r: Int) {
         question[c][r] = val
+    }
+}
+
+// MARK: - Undo
+
+extension SudokuService {
+    fileprivate func setMonitoring() {
+        monitoring = [get2D()]
+    }
+    
+    internal func setProcess() {
+        monitoring.append(question)
+    }
+    
+    internal func getLastProcess() -> D2? {
+        if monitoring.count <= 1 { return nil }
+        monitoring.removeLast()
+        question = monitoring.last ?? get2D()
+        return question
     }
 }
 
@@ -200,7 +221,7 @@ extension SudokuService {
     }
     
     class func convertTo2DIdx(idx: Int) -> (Int, Int) {
-        let c = Int(idx / 9)
+        let c = Int(floor(CGFloat(idx / 9)))
         let r = Int(idx - 9 * c)
         return (c, r)
     }
