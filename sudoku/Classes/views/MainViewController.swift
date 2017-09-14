@@ -19,6 +19,14 @@ class MainViewController: UIViewController {
             sudokuView.dropShadow()
         }
     }
+    fileprivate lazy var overlayView: UIView = {
+        let overlay = UIView()
+        overlay.frame = self.view.bounds
+        overlay.backgroundColor = UIColor.lightGrayWithAlpha03()
+        overlay.isHidden = true
+        overlay.alpha = 0
+        return overlay
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +40,7 @@ class MainViewController: UIViewController {
 extension MainViewController {
     fileprivate func initViews() {
         roundButton()
+        showSubview(type: .Option)
     }
     
     private func roundButton() {
@@ -50,6 +59,86 @@ extension MainViewController {
         }
     }
 }
+
+// MARK: - Subviews
+
+extension MainViewController {
+    fileprivate func showSubview(type: SubviewType) {
+        overlayView.removeFromSuperview()
+        overlayView.isHidden = false
+        var subview: UIView?
+        if type == .Option {
+            subview = getOptionView()
+        } else if type == .Pause {
+            subview = getPauseView()
+        } else {
+            subview = getResultView()
+        }
+        subview?.alpha = 0
+        view.addSubview(overlayView)
+        view.addSubview(subview!)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.overlayView.alpha = 1
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.3, animations: {
+                subview?.alpha = 1
+                subview?.center = self.view.center
+            })
+        })
+    }
+    
+    private func getOptionView() -> OptionView {
+        let optionView = OptionView.getView(
+            newWidth: view.frame.size.width - 60
+        )
+        optionView.dismissBlock = {
+            UIView.animate(withDuration: 0.3, animations: {
+                optionView.alpha = 0
+                self.overlayView.alpha = 0
+            }, completion: { finished in
+                optionView.removeFromSuperview()
+                self.overlayView.isHidden = true
+                self.overlayView.removeFromSuperview()
+            })
+        }
+        return optionView
+    }
+    
+    private func getPauseView() -> PauseView {
+        let pauseView = PauseView.getView(
+            newWidth: view.frame.size.width - 60
+        )
+        pauseView.dismissBlock = {
+            UIView.animate(withDuration: 0.3, animations: {
+                pauseView.alpha = 0
+                self.overlayView.alpha = 0
+            }, completion: { finished in
+                pauseView.removeFromSuperview()
+                self.overlayView.isHidden = true
+                self.overlayView.removeFromSuperview()
+            })
+        }
+        return pauseView
+    }
+    
+    private func getResultView() -> ResultView {
+        let resultView = ResultView.getView(
+            newWidth: view.frame.size.width - 60
+        )
+        resultView.dismissBlock = {
+            UIView.animate(withDuration: 0.3, animations: {
+                resultView.alpha = 0
+                self.overlayView.alpha = 0
+            }, completion: { finished in
+                resultView.removeFromSuperview()
+                self.overlayView.isHidden = true
+                self.overlayView.removeFromSuperview()
+            })
+        }
+        return resultView
+    }
+}
+
 
 // MARK: - Action
 
@@ -93,6 +182,7 @@ extension MainViewController {
     
     @IBAction func clickTimerStop(_ sender: UIButton) {
         sender.bounce()
+        showSubview(type: .Pause)
     }
 }
 

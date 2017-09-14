@@ -40,7 +40,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="play:" destination="iN0-l3-epB" eventType="touchUpInside" id="L6r-3v-dKS"/>
+                        <action selector="play" destination="iN0-l3-epB" eventType="touchUpInside" id="UaW-Yq-Odz"/>
                     </connections>
                 </button>
             </subviews>
@@ -82,7 +82,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="resume:" destination="FKU-ii-YrA" eventType="touchUpInside" id="OVs-it-aOV"/>
+                        <action selector="resume" destination="FKU-ii-YrA" eventType="touchUpInside" id="5To-hT-Lnv"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNY-fB-Ifi">
@@ -93,7 +93,7 @@
                         <color key="titleColor" red="0.5490196078431373" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="startNewGame:" destination="FKU-ii-YrA" eventType="touchUpInside" id="aAS-eU-ncZ"/>
+                        <action selector="startNewGame" destination="FKU-ii-YrA" eventType="touchUpInside" id="CtI-Vd-Zhy"/>
                     </connections>
                 </button>
             </subviews>
@@ -114,7 +114,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="34" y="212"/>
         </view>
-        <view contentMode="scaleToFill" id="yEG-lC-taa" customClass="GoodJobView" customModule="sudoku" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="yEG-lC-taa" customClass="ResultView" customModule="sudoku" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="374" height="318"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -129,7 +129,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="dismiss:" destination="yEG-lC-taa" eventType="touchUpInside" id="jip-Xj-b1h"/>
+                        <action selector="dismiss" destination="yEG-lC-taa" eventType="touchUpInside" id="2k2-XY-1mn"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-Jp-fl4">
