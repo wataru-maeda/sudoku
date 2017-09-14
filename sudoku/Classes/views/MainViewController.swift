@@ -67,12 +67,13 @@ extension MainViewController {
         overlayView.removeFromSuperview()
         overlayView.isHidden = false
         var subview: UIView?
+        let width = view.frame.size.width - 60
         if type == .Option {
-            subview = getOptionView()
+            subview = getOptionView(width: width)
         } else if type == .Pause {
-            subview = getPauseView()
+            subview = getPauseView(width: width)
         } else {
-            subview = getResultView()
+            subview = getResultView(width: width)
         }
         subview?.alpha = 0
         view.addSubview(overlayView)
@@ -87,55 +88,40 @@ extension MainViewController {
         })
     }
     
-    private func getOptionView() -> OptionView {
-        let optionView = OptionView.getView(
-            newWidth: view.frame.size.width - 60
-        )
+    private func getOptionView(width: CGFloat) -> OptionView {
+        let optionView = OptionView.getView(newWidth: width)
         optionView.dismissBlock = {
-            UIView.animate(withDuration: 0.3, animations: {
-                optionView.alpha = 0
-                self.overlayView.alpha = 0
-            }, completion: { finished in
-                optionView.removeFromSuperview()
-                self.overlayView.isHidden = true
-                self.overlayView.removeFromSuperview()
-            })
+            self.dismissSubview(subview: optionView)
         }
         return optionView
     }
     
-    private func getPauseView() -> PauseView {
-        let pauseView = PauseView.getView(
-            newWidth: view.frame.size.width - 60
-        )
+    private func getPauseView(width: CGFloat) -> PauseView {
+        let pauseView = PauseView.getView(newWidth: width)
         pauseView.dismissBlock = {
-            UIView.animate(withDuration: 0.3, animations: {
-                pauseView.alpha = 0
-                self.overlayView.alpha = 0
-            }, completion: { finished in
-                pauseView.removeFromSuperview()
-                self.overlayView.isHidden = true
-                self.overlayView.removeFromSuperview()
-            })
+            self.dismissSubview(subview: pauseView)
         }
         return pauseView
     }
     
-    private func getResultView() -> ResultView {
-        let resultView = ResultView.getView(
-            newWidth: view.frame.size.width - 60
-        )
+    private func getResultView(width: CGFloat) -> ResultView {
+        let resultView = ResultView.getView(newWidth: width)
         resultView.dismissBlock = {
-            UIView.animate(withDuration: 0.3, animations: {
-                resultView.alpha = 0
-                self.overlayView.alpha = 0
-            }, completion: { finished in
-                resultView.removeFromSuperview()
-                self.overlayView.isHidden = true
-                self.overlayView.removeFromSuperview()
-            })
+            self.dismissSubview(subview: resultView)
         }
         return resultView
+    }
+    
+    private func dismissSubview(subview: UIView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            subview.alpha = 0
+            self.overlayView.alpha = 0
+        }, completion: { finished in
+            subview.removeFromSuperview()
+            self.overlayView.isHidden = true
+            self.overlayView.removeFromSuperview()
+        })
+        
     }
 }
 
