@@ -100,6 +100,11 @@ extension MainViewController {
         optionView.dismissBlock = {
             self.dismissSubview(subview: optionView)
             self.sudokuView.startGame()
+            TimerUtil.shared.reset()
+            TimerUtil.shared.start()
+            TimerUtil.shared.updateTimeCallback = { time in
+                self.timerLabel.text = time
+            }
         }
         SudokuService.shared.initA {
             optionView.playButton.isEnabled = true
@@ -109,12 +114,14 @@ extension MainViewController {
     
     private func getPauseView(width: CGFloat) -> PauseView {
         let pauseView = PauseView.getView(newWidth: width)
+        TimerUtil.shared.stop()
         pauseView.restartBlock = {
             self.dismissSubview(subview: pauseView, callback: {
                 self.showSubview(type: .Option)
             })
         }
         pauseView.dismissBlock = {
+            TimerUtil.shared.start()
             self.dismissSubview(subview: pauseView)
         }
         return pauseView

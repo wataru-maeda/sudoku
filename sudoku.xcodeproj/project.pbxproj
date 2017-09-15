@@ -13,6 +13,7 @@
 		041469571F68FF32003250B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041469561F68FF32003250B2 /* Assets.xcassets */; };
 		0414695A1F68FF32003250B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041469581F68FF32003250B2 /* LaunchScreen.storyboard */; };
 		04199A481F6A7829005488F8 /* SubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04199A471F6A7829005488F8 /* SubViews.swift */; };
+		041D680A1F6B73FC0076F9FC /* TimerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D68091F6B73FC0076F9FC /* TimerUtil.swift */; };
 		04AF4A921F690E4F00011550 /* subview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4A911F690E4F00011550 /* subview.xib */; };
 		04AF4A941F690E8300011550 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A931F690E8300011550 /* MainViewController.swift */; };
 		04AF4A971F6911ED00011550 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4A961F6911ED00011550 /* UIView+Ext.swift */; };
@@ -34,6 +35,7 @@
 		041469591F68FF32003250B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0414695B1F68FF32003250B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		04199A471F6A7829005488F8 /* SubViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViews.swift; sourceTree = "<group>"; };
+		041D68091F6B73FC0076F9FC /* TimerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUtil.swift; sourceTree = "<group>"; };
 		04AF4A911F690E4F00011550 /* subview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = subview.xib; path = sudoku/Classes/views/subview.xib; sourceTree = SOURCE_ROOT; };
 		04AF4A931F690E8300011550 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04AF4A961F6911ED00011550 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				04AF4A9C1F69331700011550 /* UIButton+Ext.swift */,
 				04AF4A9E1F69367400011550 /* UIFont+Ext.swift */,
 				04AF4AA21F693B2B00011550 /* Array+Ext.swift */,
+				041D68091F6B73FC0076F9FC /* TimerUtil.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				04AF4A9F1F69367400011550 /* UIFont+Ext.swift in Sources */,
 				04AF4A9B1F692BF200011550 /* UIColor+Ext.swift in Sources */,
 				04AF4AA31F693B2B00011550 /* Array+Ext.swift in Sources */,
+				041D680A1F6B73FC0076F9FC /* TimerUtil.swift in Sources */,
 				041469521F68FF32003250B2 /* ViewController.swift in Sources */,
 				041469501F68FF32003250B2 /* AppDelegate.swift in Sources */,
 			);

@@ -134,6 +134,7 @@ class ResultView: UIView {
         frame.origin.y = UIScreen.main.bounds.height
         frame.size.width = newWidth
         resultView.frame = frame
+        resultView.timerLabel.text = TimerUtil.shared.get()
         return resultView
     }
 }

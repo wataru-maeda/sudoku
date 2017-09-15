@@ -176,6 +176,7 @@ extension SudokuView {
 extension SudokuView {
     fileprivate func finishGameIfCompleted() {
         if SudokuService.shared.didComplete() {
+            TimerUtil.shared.stop()
             var buttons = [UIButton]()
             for view in subviews {
                 if let button = view as? UIButton {
