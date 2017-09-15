@@ -12,10 +12,11 @@ class MainViewController: UIViewController {
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var menuView: UIView!
     @IBOutlet var inputDigitView: UIView!
+    @IBOutlet var levelButton: UIButton!
+    
     @IBOutlet var sudokuView: SudokuView! {
         didSet {
-            sudokuView.layer.cornerRadius = 5
-            sudokuView.clipsToBounds = true
+            sudokuView.roundCorner()
             sudokuView.dropShadow()
             sudokuView.finishGameCallback = {
                 self.showSubview(type: .Result)
@@ -49,14 +50,14 @@ extension MainViewController {
     private func roundButton() {
         for view in menuView.subviews {
             if let button = view as? UIButton {
-                button.layer.cornerRadius = 5
+                button.roundCorner()
                 button.imageView?.contentMode = .scaleAspectFit
             }
         }
         for view in inputDigitView.subviews {
             if let button = view as? UIButton {
                 button.layer.borderWidth = 3
-                button.layer.cornerRadius = 5
+                button.roundCorner()
                 button.layer.borderColor = UIColor.lightGrayWithAlpha03().cgColor
             }
         }
@@ -67,6 +68,7 @@ extension MainViewController {
 
 extension MainViewController {
     fileprivate func showSubview(type: SubviewType) {
+        SudokuService.shared.setLevel(level: .Easy)
         overlayView.removeFromSuperview()
         overlayView.isHidden = false
         var subview: UIView?
@@ -89,9 +91,11 @@ extension MainViewController {
     }
     
     private func getOptionView(width: CGFloat) -> OptionView {
+        levelButton.setTitle(SudokuLevel.Easy.rawValue, for: .normal)
         let optionView = OptionView.getView(newWidth: width)
         optionView.levelBlock = { level in
             SudokuService.shared.setLevel(level: level)
+            self.levelButton.setTitle(level.rawValue, for: .normal)
         }
         optionView.dismissBlock = {
             self.dismissSubview(subview: optionView)
@@ -106,8 +110,9 @@ extension MainViewController {
     private func getPauseView(width: CGFloat) -> PauseView {
         let pauseView = PauseView.getView(newWidth: width)
         pauseView.restartBlock = {
-            self.sudokuView.restartGame()
-            self.dismissSubview(subview: pauseView)
+            self.dismissSubview(subview: pauseView, callback: {
+                self.showSubview(type: .Option)
+            })
         }
         pauseView.dismissBlock = {
             self.dismissSubview(subview: pauseView)
@@ -118,12 +123,14 @@ extension MainViewController {
     private func getResultView(width: CGFloat) -> ResultView {
         let resultView = ResultView.getView(newWidth: width)
         resultView.dismissBlock = {
-            self.dismissSubview(subview: resultView)
+            self.dismissSubview(subview: resultView, callback: {
+                self.showSubview(type: .Option)
+            })
         }
         return resultView
     }
     
-    private func dismissSubview(subview: UIView) {
+    private func dismissSubview(subview: UIView, callback: @escaping ()->() = {_ in}) {
         UIView.animate(withDuration: 0.3, animations: {
             subview.alpha = 0
             self.overlayView.alpha = 0
@@ -131,8 +138,8 @@ extension MainViewController {
             subview.removeFromSuperview()
             self.overlayView.isHidden = true
             self.overlayView.removeFromSuperview()
+            callback()
         })
-        
     }
 }
 

@@ -18,7 +18,10 @@ class OptionView: UIView {
     var dismissBlock: ()->() = {_ in}
     var levelBlock: (_ level: SudokuLevel)->() = {_ in}
     @IBOutlet var playButton: UIButton! {
-        didSet { playButton.isEnabled = false }
+        didSet {
+            playButton.isEnabled = false
+            playButton.roundCorner()
+        }
     }
     
     override init(frame: CGRect) {
@@ -28,8 +31,7 @@ class OptionView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = .white
-        layer.cornerRadius = 5
-        clipsToBounds = true
+        roundCorner()
     }
     
     @IBAction func changeLevel(_ sender: UISegmentedControl) {
@@ -63,6 +65,14 @@ class OptionView: UIView {
 class PauseView: UIView {
     var dismissBlock: ()->() = {_ in}
     var restartBlock: ()->() = {_ in}
+    
+    @IBOutlet var startNewButton: UIButton! {
+        didSet { startNewButton.roundCorner() }
+    }
+    @IBOutlet var resumeButton: UIButton! {
+        didSet { resumeButton.roundCorner() }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -70,8 +80,7 @@ class PauseView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = .white
-        layer.cornerRadius = 5
-        clipsToBounds = true
+        roundCorner()
     }
     
     @IBAction func startNewGame() {
@@ -99,6 +108,9 @@ class PauseView: UIView {
 class ResultView: UIView {
     var dismissBlock: ()->() = {_ in}
     @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var finishButton: UIButton! {
+        didSet { finishButton.roundCorner() }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -107,8 +119,7 @@ class ResultView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = .white
-        layer.cornerRadius = 5
-        clipsToBounds = true
+        roundCorner()
     }
     
     @IBAction func dismiss() {

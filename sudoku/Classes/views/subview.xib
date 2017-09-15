@@ -25,7 +25,7 @@
                     <segments>
                         <segment title="Easy"/>
                         <segment title="Normal"/>
-                        <segment title="Expart"/>
+                        <segment title="Hard"/>
                     </segments>
                     <color key="tintColor" red="0.48150417574437188" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
@@ -68,7 +68,7 @@
             <rect key="frame" x="0.0" y="0.0" width="374" height="262"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Y-fW-RdV">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Y-fW-RdV">
                     <rect key="frame" x="135" y="30" width="105" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="105" id="W12-LF-bWv"/>
@@ -115,6 +115,10 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="resumeButton" destination="edT-x1-cfH" id="Gwz-rR-GBY"/>
+                <outlet property="startNewButton" destination="hNY-fB-Ifi" id="pHD-3J-WX7"/>
+            </connections>
             <point key="canvasLocation" x="34" y="212"/>
         </view>
         <view contentMode="scaleToFill" id="yEG-lC-taa" customClass="ResultView" customModule="sudoku" customModuleProvider="target">
@@ -179,6 +183,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="finishButton" destination="1M1-9d-gkS" id="TtK-tT-ewi"/>
                 <outlet property="timerLabel" destination="yWz-Jp-fl4" id="mGi-1X-nDT"/>
             </connections>
             <point key="canvasLocation" x="34" y="612.5"/>

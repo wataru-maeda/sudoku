@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - UI
+
 extension UIView {
     func dropShadow() {
         layer.masksToBounds = false
@@ -20,6 +22,20 @@ extension UIView {
         layer.rasterizationScale = UIScreen.main.scale
     }
     
+    func roundCorner() {
+        layer.cornerRadius = 5
+        clipsToBounds = true
+    }
+    
+    func circleCorner() {
+        layer.cornerRadius = frame.size.width / 2
+        clipsToBounds = true
+    }
+}
+
+// MARK: - Animation
+
+extension UIView {
     func bounce() {
         let forward = CATransform3DMakeScale(1.1, 1.1, 1)
         let back = CATransform3DMakeScale(0.9, 0.9, 1)

@@ -264,6 +264,7 @@
                     </view>
                     <connections>
                         <outlet property="inputDigitView" destination="9ST-OW-jqK" id="ftG-tC-pID"/>
+                        <outlet property="levelButton" destination="vze-3W-uwB" id="zVJ-zG-B2D"/>
                         <outlet property="menuView" destination="MH9-cs-lwb" id="lI6-b7-HKJ"/>
                         <outlet property="sudokuView" destination="baf-RI-IP1" id="S7Z-OG-6JJ"/>
                         <outlet property="timerLabel" destination="Lj4-yw-PFm" id="4fp-rv-cfJ"/>

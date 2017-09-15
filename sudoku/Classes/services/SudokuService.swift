@@ -8,8 +8,10 @@
 
 import UIKit
 
-public enum SudokuLevel {
-    case Easy, Normal, Hard
+public enum SudokuLevel: String {
+    case Easy = "Easy"
+    case Normal = "Normal"
+    case Hard = "Hard"
 }
 
 typealias D2 = Array<Array<Int>>
