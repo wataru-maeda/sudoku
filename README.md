@@ -1,6 +1,9 @@
+# Sudoku Demo
+
 ![](https://github.com/WataruMaeda/sudoku/blob/master/demo/mock.png)
 
 ## Features
+
 - [x] Quiz auto-Generation
 - [x] 3 levels of dificulty
 - [x] Time challenge
@@ -8,9 +11,12 @@
 - [x] Undo
 
 ## Demos
+
 ![・Quiz auto-Generation](https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_1.gif)
-![・Cheating](https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_3.mp4)
-![・Undo](https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_2.mp4)
+
+・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_3.mp4">Cheating</a>
+
+・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_2.mp4">Undo</a>
 
 ## Requirements
 
