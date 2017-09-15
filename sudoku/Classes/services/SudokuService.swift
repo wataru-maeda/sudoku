@@ -8,6 +8,10 @@
 
 import UIKit
 
+public enum SudokuLevel {
+    case Easy, Normal, Hard
+}
+
 typealias D2 = Array<Array<Int>>
 typealias GetQ = ((_ q: D2) -> Void)?
 
@@ -18,6 +22,7 @@ class SudokuService {
     fileprivate var answer = D2()
     fileprivate var question = D2()
     fileprivate var monitoring = [D2]()
+    fileprivate var level = SudokuLevel.Easy
 }
 
 // MARK: - Getter, Setter
@@ -98,7 +103,14 @@ extension SudokuService {
 extension SudokuService {
     fileprivate func setQuestion() {
         question = get2D()
-        let range = Int(arc4random_uniform(20)) + 20
+        var range = Int(arc4random_uniform(20))
+        if level == .Easy {
+            range += 30
+        } else if level == .Normal {
+            range += 20
+        } else {
+            range += 0
+        }
         for _ in 0..<range {
             let c = Int(arc4random_uniform(9))
             let r = Int(arc4random_uniform(9))
@@ -108,6 +120,10 @@ extension SudokuService {
         for q in question { print(q) }
         print("\nAnswer is ..")
         for a in answer { print(a) }
+    }
+    
+    func setLevel(level: SudokuLevel) {
+        self.level = level
     }
 }
 

@@ -90,6 +90,9 @@ extension MainViewController {
     
     private func getOptionView(width: CGFloat) -> OptionView {
         let optionView = OptionView.getView(newWidth: width)
+        optionView.levelBlock = { level in
+            SudokuService.shared.setLevel(level: level)
+        }
         optionView.dismissBlock = {
             self.dismissSubview(subview: optionView)
             self.sudokuView.startGame()

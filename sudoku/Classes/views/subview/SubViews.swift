@@ -16,6 +16,7 @@ public enum SubviewType {
 
 class OptionView: UIView {
     var dismissBlock: ()->() = {_ in}
+    var levelBlock: (_ level: SudokuLevel)->() = {_ in}
     @IBOutlet var playButton: UIButton! {
         didSet { playButton.isEnabled = false }
     }
@@ -32,6 +33,13 @@ class OptionView: UIView {
     }
     
     @IBAction func changeLevel(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            levelBlock(.Easy)
+        } else if sender.selectedSegmentIndex == 1 {
+            levelBlock(.Normal)
+        } else {
+            levelBlock(.Hard)
+        }
     }
     
     @IBAction func play() {

@@ -24,7 +24,7 @@
                     <rect key="frame" x="24" y="101" width="326" height="29"/>
                     <segments>
                         <segment title="Easy"/>
-                        <segment title="Intermediate"/>
+                        <segment title="Normal"/>
                         <segment title="Expart"/>
                     </segments>
                     <color key="tintColor" red="0.48150417574437188" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
