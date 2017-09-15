@@ -1,7 +1,3 @@
-# Sudoku Demo
-
-![](https://github.com/WataruMaeda/sudoku/blob/master/demo/mock.png)
-
 ## Features
 
 - [x] Quiz auto-generation, the quiz created with 3 levels of dificulty.
@@ -30,3 +26,7 @@ Xcode 8.0+
 ## License
 
 This project is available under the MIT license. See the [LICENSE](https://github.com/WataruMaeda/sudoku/blob/master/LICENSE) file for more info.
+
+## Mock
+
+![](https://github.com/WataruMaeda/sudoku/blob/master/demo/mock.png)
