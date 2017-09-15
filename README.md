@@ -4,18 +4,16 @@
 
 ## Features
 
-- [x] Quiz auto-Generation
-- [x] 3 levels of dificulty
+- [x] Quiz auto-generation, the quiz created with 3 levels of dificulty.
 - [x] Time challenge
-- [x] Cheating
-- [x] Undo
+- [x] Cheating feature for finding answers without solving it
+- [x] Undo feature is for retreave previous answer
 
 ## Demos
 
 ![・Quiz auto-Generation](https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_1.gif)
 
 ・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_3.mp4">Cheating</a>
-
 ・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_2.mp4">Undo</a>
 
 ## Requirements
