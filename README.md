@@ -11,10 +11,7 @@
 
 ## Demos
 
-<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_1.png" width="150">
-<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_2.png" width="150">
-<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_3.png" width="150">
-<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_4.png" width="150">
+<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_3.png" width="180">  <img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_1.png" width="180">  <img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_4.png" width="180">  <img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_2.png" width="180">
 
 ・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_1.gif">Auto-quiz generation</a>
 
