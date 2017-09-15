@@ -11,10 +11,18 @@
 
 ## Demos
 
-![・Quiz auto-Generation](https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_1.gif)
+<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_1.png" width="150">
+<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_2.png" width="150">
+<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_3.png" width="150">
+<img src="https://github.com/WataruMaeda/sudoku/blob/master/demo/ss_4.png" width="150">
 
-・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_3.mp4">Cheating</a>
+・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_1.gif">Auto-quiz generation</a>
+
+・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_3.mp4">Cheating answer</a>
+
 ・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_2.mp4">Undo</a>
+
+・<a href="https://github.com/WataruMaeda/sudoku/blob/master/demo/demo_4.mp4">Quiz completion</a>
 
 ## Requirements
 
